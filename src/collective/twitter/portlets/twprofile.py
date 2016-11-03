@@ -201,7 +201,7 @@ class Renderer(base.Renderer):
         <a href="http://twitter.com/#!/%s" target="blank_">%s</a>
         """
 
-        full_text = result.GetText()
+        full_text = result.text
         split_text = full_text.split(' ')
 
         # Now, lets fix links, hashtags and users
@@ -235,9 +235,9 @@ class Renderer(base.Renderer):
         if self.data.pretty_date:
             # Returns human readable date for the tweet
             date_utility = getUtility(IPrettyDate)
-            date = date_utility.date(result.GetCreatedAt())
+            date = date_utility.date(result.created_at)
         else:
-            date = DateTime.DateTime(result.GetCreatedAt())
+            date = DateTime.DateTime(result.created_at)
 
         return date
 

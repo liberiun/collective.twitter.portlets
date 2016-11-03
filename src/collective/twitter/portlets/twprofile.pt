@@ -18,14 +18,14 @@
                     <img class="avatar"
                         src="#"
                         tal:condition="view/data/show_avatars"
-                        tal:attributes="src python:result.GetUser().GetProfileImageUrl()"/>
+                        tal:attributes="src python:result.user.profile_image_url"/>
                 </div>
                 <div class="tweet-content">
                     <div class="tweet-row">
                         <span class="tweet-user-name">
                             <a class="tweet-screen-name"
                             href="#"
-                            tal:define="screen_name python:result.GetUser().GetScreenName()"
+                            tal:define="screen_name python:result.user.screen_name"
                             tal:attributes="href string:http://twitter.com/#!/${screen_name}">
                                 <span tal:content="screen_name"/>
                             </a>
